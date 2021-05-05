@@ -39,4 +39,4 @@ class TechnologySerializer(serializers.ModelSerializer):
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ["id", "address_id", "tech", "supported"]
+        fields = ["id", "address_id", "tech_id", "supported"]

@@ -20,6 +20,7 @@ class AddressViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication, ]
     permission_classes = [IsAuthenticated, ]
 
+
 # noinspection PyUnresolvedReferences
 class TechnologyViewSet(viewsets.ModelViewSet):
     queryset = Technology.objects.all()

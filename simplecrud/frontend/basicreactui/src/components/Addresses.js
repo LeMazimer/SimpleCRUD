@@ -1,5 +1,47 @@
 import React, { Component } from 'react'
 
+// forma za dodat naslov ne dela (zgenerira se pravi payload, a zaradi nekega razloga django crkne
+// (predvidevam da ne dovoli POST requesta, ampak samo GET, iz localhost:3000, moram ugotoviti točno za kaj se gre)
+//<form onSubmit={this.addAddress}>
+//                    <span className="formtext">Dodaj nov naslov</span>
+//                        <input
+//                        type="integer"
+//                        id="formTextID"
+//                        placeholder="ID"
+//                        onChange={this.onIdChange}
+//                        required
+//                        />
+//                        <input
+//                        type="text"
+//                        id="formTextUlica"
+//                        placeholder="Ulica"
+//                        onChange={this.onUlicaChange}
+//                        required
+//                        />
+//                        <input
+//                        type="text"
+//                        id="formTextHisnaStevilka"
+//                        placeholder="Hišna številka"
+//                        onChange={this.onHisnaStevilkaChange}
+//                        required
+//                        />
+//                        <input
+//                        type="text"
+//                        id="formTextPosta"
+//                        placeholder="Pošta"
+//                        onChange={this.onPostaChange}
+//                        required
+//                        />
+//                        <input
+//                        type="text"
+//                        id="formTextPostnaStevilka"
+//                        placeholder="Poštna številka"
+//                        onChange={this.onPostnaStevilkaChange}
+//                        required
+//                        />
+//                    <button onClick={this.addAddress}>Dodaj naslov</button>
+//                </form>
+
 export default class Addresses extends Component {
     backendURL = "http://localhost:8000"
 
@@ -90,45 +132,6 @@ export default class Addresses extends Component {
                     return <h3 key={address.id}>ID: {address.id}, {address.street} {address.house_number}, {address.postal_zone} {address.administrative_zone}</h3>
                 })}
                 <button onClick={this.loadAddresses}>Load addresses</button>
-                <form onSubmit={this.addAddress}>
-                    <span className="formtext">Dodaj nov naslov</span>
-                        <input 
-                        type="integer"
-                        id="formTextID"
-                        placeholder="ID" 
-                        onChange={this.onIdChange}
-                        required
-                        />
-                        <input 
-                        type="text"
-                        id="formTextUlica"
-                        placeholder="Ulica" 
-                        onChange={this.onUlicaChange}
-                        required
-                        />
-                        <input 
-                        type="text"
-                        id="formTextHisnaStevilka"
-                        placeholder="Hišna številka" 
-                        onChange={this.onHisnaStevilkaChange}
-                        required 
-                        />
-                        <input 
-                        type="text"
-                        id="formTextPosta"
-                        placeholder="Pošta" 
-                        onChange={this.onPostaChange}
-                        required 
-                        />
-                        <input 
-                        type="text"
-                        id="formTextPostnaStevilka"
-                        placeholder="Poštna številka" 
-                        onChange={this.onPostnaStevilkaChange}
-                        required 
-                        />
-                    <button onClick={this.addAddress}>Dodaj naslov</button>
-                </form>
             </div>
         )
     }
